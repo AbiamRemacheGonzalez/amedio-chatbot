@@ -1,0 +1,54 @@
+version: "2.0"
+
+stories:
+
+# - story: info_path
+#   steps:
+#   - intent: pedir_ayuda
+#   - action: utter_pedir_ayuda
+#   - intent: despedida
+#   - action: utter_despedida
+# - story: El usuario quiere ver sus pedidos
+#   steps:
+#   - intent: ver_pedidos
+#   - action: name_form
+#   - active_loop: name_form
+#   - active_loop: null
+#   - slot_was_set:
+#     - requested_slot: null
+#   - action: action_mostrar_pedidos
+#   - action: utter_afirmacion
+
+# - story: El usuario empieza un pedido
+#   steps:
+#   - intent: pedir_pizza
+#   - action: action_reset_slots
+#   - action: name_form
+#   - active_loop: name_form
+#   - active_loop: null
+#   - slot_was_set:
+#     - requested_slot: null
+#   - action: action_name_form
+#   - checkpoint: empezar_formulario_de_dirección
+
+# - story: Le pedimos su dirección.
+#   steps:
+#   - checkpoint: empezar_formulario_de_dirección
+#   - action: dir_form
+#   - active_loop: dir_form
+#   - active_loop: null
+#   - slot_was_set:
+#     - requested_slot: null
+#   - action: action_dir_form
+#   - checkpoint: empezar_formulario_de_pizza
+
+# - story: Ofrecemos el menu para que el usuario elija.
+#   steps:
+#   - checkpoint: empezar_formulario_de_pizza
+#   - action: pizza_form
+#   - active_loop: pizza_form
+#   - active_loop: null
+#   - slot_was_set:
+#     - requested_slot: null
+#   - action: action_pizza_form
+#   - action: utter_afirmacion

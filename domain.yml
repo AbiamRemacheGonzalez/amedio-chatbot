@@ -1,0 +1,171 @@
+version: '2.0'
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- denegacion
+- saludo
+- afirmacion
+- despedida
+- pedir_ayuda
+- pedir_contacto
+- pedir_direccion
+- pedir_horario
+- pedir_informacion
+- cualquier_cosa
+- decir_ordenador_sobremesa
+- decir_portatil
+- decir_movil
+- decir_tablet
+- decir_mac
+- decir_ipad
+- decir_switch
+- decir_ps4
+#https://github.com/Horizon733/rasa-webchat
+#https://github.com/JiteshGaikwad/Chatbot-Widget
+
+responses:
+  utter_saludo:
+  - text: Hola mi nombre es Amelio, ¿En que puedo ayudarte?
+    buttons:
+    - title: "Contacto"
+      payload: "contacto"
+    - title: "Ubicación"
+      payload: "ubicacion"
+    - title: "Horario"
+      payload: "horario"
+    - title: "Reparaciones"
+      payload: "reparación"
+  utter_despedida:
+  - text: Hay sido un placer ayudarte. Espero volver a verte.
+  utter_pedir_contacto:
+  - text: |-
+      Puedes contactar con DR PC:
+      - Llamando al teléfono:               828 121 467
+      - Contactando por WhatsApp:            675 891 723
+      - Contactando por Correo Electrónico: tomasmorales@doctorpclaspalmas.com
+  utter_pedir_direccion:
+  - text: "Nuestra dirección es:\nPaseo Tomas Morales, 30, 35003"
+    image: "https://queopinan.net/wp-content/uploads/doctor-pc-las-palmas.jpeg"
+  utter_pedir_horario:
+  - text: "Nuestro horario es:\n- De Lunes a Jueves de 9:00-13:00 y de 14:00-18:00.\n- Los Viernes de 9:00-17:00"
+  utter_pedir_ayuda:
+  - text: |-
+      ¿Puedo ayudarte en algo más?
+    buttons:
+    - title: "Contacto"
+      payload: "contacto"
+    - title: "Ubicación"
+      payload: "ubicacion"
+    - title: "Horario"
+      payload: "horario"
+    - title: "🔧Reparaciones🔧"
+      payload: "reparaciones"
+    - title: "Salir"
+      payload: "adios"
+  utter_pedir_informacion:
+  - text: |
+      En Doctor Pc Las Palmas reparamos todo tipo de equipos electrónicos de todas las marcas:
+    buttons:
+    - title: "Equipo de sobremesa"
+      payload: "equipo de sobremesa"
+    - title: "Portatiles"
+      payload: "portatiles"
+    - title: "Moviles"
+      payload: "moviles"
+    - title: "Play Station 4"
+      payload: "play station"
+    - title: "Nintendo Switch"
+      payload: "switch"
+    - title: "Tablets"
+      payload: "tablet"
+    - title: "Mac"
+      payload: "mac"
+    - title: "Ipad"
+      payload: "ipad"
+    - title: "Ayuda"
+      payload: "ayuda"
+  utter_decir_ordenador_sobremesa:
+  - text: |-
+      Realizamos todo tipo de reparaciones en sobremesa:
+      - 🔧 Sustitución de cualquier componente en el equipo
+      - 🔧Configuración inicial torre
+      - 🔧 Reparación chip gráfico 
+      - 🔧 Recuperación de datos en distintos dispositivos
+      - 🔧 Virus
+      - 🔧 Problemas de configuración en sobremesa
+      - 🔧 Limpieza física interna del equipo
+      - 🔧 Cualquier problema de software o hardware.
+      Diagnosis gratuita en Reparación de sobremesa en Las Palmas de GC
+    image: https://i0.wp.com/doctorpclaspalmas.com/wp-content/uploads/2021/04/g1-Slim-Series-600x600-1.jpg?w=600&ssl=1
+  utter_decir_portatil:
+  - text: |-
+      Realizamos todo tipo de reparaciones en portátil:
+      - 🔧 Configuración inicial de un portátil
+      - 🔧 Reparación chip gráfico en un portátil
+      - 🔧 Instalación de un SSD en el portátil
+      - 🔧 Virus en portátil
+      - 🔧 Problemas de configuración de software
+      - 🔧 Limpieza física portátil
+      - 🔧 Cambio de pantalla de ordenador portátil
+      - 🔧 Cualquier problema de software o hardware en su portátil.
+      Diagnosis gratuita en reparación de portátiles en Las Palmas.
+  utter_decir_movil:
+  - text: |-
+      En nuestros años de experiencia en DoctorPC nos hemos especializado en reparar moviles en Las Palmas de GC dando solución a todo tipo de problemas:
+      - 🔧 Sustitución pantalla original y compatible
+      - 🔧 Sustitución de batería
+      - 🔧 Cambio de conector de carga
+      - 🔧 Sustitución altavoz/micro
+      - 🔧 Terminal mojado
+    image: https://i0.wp.com/doctorpclaspalmas.com/wp-content/uploads/2017/10/drpc-reparaci%C3%B3nmoviles.jpg?resize=386%2C520&ssl=1
+  utter_decir_tablet:
+  - text: |-
+      Realizamos todo tipo de reparaciones en :
+      - 🔧 Reparación de conector de carga
+      - 🔧 Configuración inicial
+      - 🔧 Virus
+      - 🔧 Problemas de configuración
+      - 🔧 Cambio de pantalla tablet
+      - 🔧 Cualquier problema de software o hardware en su Tablet.
+  utter_decir_mac:
+  - text: |-
+      Como les decimos trabajamos con cualquier Macbook Pro, Macbook Air o iMac en los que realizamos todo tipo de reparaciones:
+      - 🔧 Configuración inicial Mac
+      - 🔧 Reparación chip gráfico Mac
+      - 🔧 Recuperación de datos Mac
+      - 🔧 Problemas de configuración
+      - 🔧 Cambio de pantalla portátil Macbook
+      - 🔧 Sustitución fuente iMac
+      - 🔧 Reparación placa base Mac
+      Cualquier problema de software o hardware en su Mac.
+    image: https://i2.wp.com/doctorpclaspalmas.com/wp-content/uploads/2017/10/drpc-imac-pantalla-rota.jpg?resize=313%2C232&ssl=1
+  utter_decir_ipad:
+  - text: |-
+      Realizamos todo tipo de reparaciones:
+      - 🔧 Reparación de conector de carga iPad 
+      - 🔧 Problemas de configuración iPad
+      - 🔧 Cambio de pantalla iPad
+      - 🔧 iPad mojado
+      - 🔧 Cualquier problema de software o hardware en su iPad
+    image: https://i2.wp.com/doctorpclaspalmas.com/wp-content/uploads/2017/10/drpc-ipadpantalla2.jpg?resize=222%2C300&ssl=1
+  utter_decir_ps4:
+  - text: |-
+      Nunca tuvieron tan fácil reparar su PS4 en Las Palmas de GC, en DoctorPC reparamos todo tipo de problemas en estos dispositivos:
+      - 🔧 Reinstalación sistema PS4
+      - 🔧 Reparación tarjeta gráfica en PS4
+      - 🔧 Cambio de disco duro PS4
+      - 🔧 Sustitución conexión HDMi PS4
+      - 🔧 Limpieza física en PS4
+    image: https://i1.wp.com/doctorpclaspalmas.com/wp-content/uploads/2020/07/reparar-ps4-las-palmas.jpg?resize=300%2C277&ssl=1
+
+  utter_decir_switch:
+  - text: |-
+      Bien por el uso o por el tiempo del dispositivo empieza a ser habitual que surjan problemas en nuestro dispositivo:
+      - 🔧 No carga la Nintendo Switch
+      - 🔧 Pantalla Rota en la Nintendo Switch
+      - 🔧 Sobrecalentamiento en la Nintendo Switch
+      - 🔧 No funcionan los mandos Joycon
+      - 🔧 No enciende Nintendo Switch
+    image: https://i1.wp.com/doctorpclaspalmas.com/wp-content/uploads/2020/07/nintendo-switch.jpg?resize=924%2C520&ssl=1
+

@@ -1,0 +1,196 @@
+version: "2.0"
+nlu:
+- intent: saludo
+  examples: |
+    - hola
+    - buenas tardes
+    - buenos dias
+    - buenas
+    - que hay
+    - hola, buenas tardes
+    - holi
+    - ola
+    - Que pasa
+- intent: despedida
+  examples: |
+    - buenas tardes
+    - adiós
+    - nos vemos
+    - adiós, buen día
+    - ten un buen día
+    - me despido
+    - buenas noches
+    - nos vemos despues
+- intent: afirmacion
+  examples: |
+    - si
+    - s
+    - por supuesto
+    - suena bien
+    - correcto
+    - perfecto
+    - claro
+    - si, por favor.
+    - si quiero
+    - me apetece
+- intent: denegacion
+  examples: |
+    - no
+    - n
+    - nunca
+    - No creo
+    - No me gusta
+    - Ni hablar
+    - No realmente
+    - Ni quiero
+    - Para nada
+    - nunca jamás
+    - Quizas
+    - A lo mejor
+- intent: pedir_contacto
+  examples: |
+    - Contacto
+    - Telefono
+    - Número
+    - Contacto Telefónico
+    - Quiero contactar con la empresa
+    - Contactar con la empresa
+    - Correo electrónico
+    - Email
+    - Gmail
+    - Correo
+    - Quiero el correo electrónico
+    - Me gustaría contactar por correo
+    - Me gustaría contactar por email
+    - Me gustaría contactar por correo electrónico
+    
+- intent: pedir_direccion
+  examples: |
+    - ¿Donde puedo encontraros?
+    - Localización
+    - Ubicación
+    - Lugar de la empresa
+    - ¿Donde?
+    - Cual es su ubicación?
+    - Cual es su dirección?
+    - ¿En que lugar esta la empresa?
+    - Puedes decirme donde se encuentra la empresa?
+    - ¿Donde puedo reparar mi dispositivo?
+    - ¿En que lugar estaís?
+    - ¿Lugar?
+    - ¿Dirección?
+    - ¿Donde?
+- intent: pedir_horario
+  examples: |
+    - ¿Que horario teneis?
+    - Horario
+    - ¿Cuando?
+    - Lunes
+    - Martes
+    - Miercoles
+    - Jueves
+    - Viernes
+    - sabado
+    - Domingo
+    - Festivo
+    - ¿A que hora abres?
+    - ¿Que días de la semana abres?
+    - Horarios
+    - ¿Abres los domingos?
+    - ¿Abres los sabados?
+  
+- intent: pedir_ayuda
+  examples: |
+    - ¿Como puedes ayudarme?
+    - ayuda
+    - socorro
+    - no entiendo
+    - no te sigo en juego
+    - ¿puedes ayudar?
+    - ¿?
+    - Quiero pedir ayuda.
+    - ?
+    - Me gustaría obtener ayuda
+
+- intent: pedir_informacion
+  examples: |
+    - ¿Reparaciones?
+    - Reparan?
+    - ¿Reparan mi Ipad?
+    - ¿Reparan ordenadores?
+    - ¿reparan pcs?
+    - ¿Reparan moviles?
+    - ¿Reparan pantallas?
+    - ¿Reparan plays?
+    - ¿Reparan Ps4?
+    - ¿Reparan portatiles?
+    - Reparaciones
+    - Reparan ps4?
+    - Que reparan?
+    - Reparan ordenadore gaming?
+
+- intent: cualquier_cosa
+  examples: |
+    - persona
+    - quiero pizza
+    - prefiero jugar
+    - mi telefono es
+    - me llamo alberto
+    - estoy cansado
+    - usuario
+- intent: decir_ordenador_sobremesa
+  examples: |
+    - Ordenador Sobremesa
+    - equipo de sobremesa
+    - computador
+    - Ordenador
+    - PC
+    - Sobremesa
+    - Torre
+    - Computadora
+
+- intent: decir_portatil
+  examples: |
+   - Portatiles
+   - portatiles
+   - ordenador portatil
+- intent: decir_movil
+  examples: |
+    - Moviles
+    - Smartphone
+    - Telefono movil
+    - Teléfonos
+    - moviles
+- intent: decir_tablet
+  examples: |
+    - tablet
+    - tablets
+- intent: decir_mac
+  examples: |
+    - mac
+    - ios
+    - MACS
+    - Macbook
+    - macbook pro
+    - Macbook Pro
+    - Macbook Air
+    - iMac
+- intent: decir_ipad
+  examples: |
+    - ipad
+    - ipad pro
+    - ipad air
+    - ipad air 2
+- intent: decir_ps4
+  examples: |
+    - playstation 4
+    - play
+    - PS4
+    - ps4
+    - play station
+    - play station 4
+- intent: decir_switch
+  examples: |
+    - switch
+    - nintendo switch
+    - nintendo
