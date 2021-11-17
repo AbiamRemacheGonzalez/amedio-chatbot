@@ -23,27 +23,37 @@ intents:
 - decir_ps4
 #https://github.com/Horizon733/rasa-webchat
 #https://github.com/JiteshGaikwad/Chatbot-Widget
+#pip3 install spacy download es_core_news_sm
+#🐵🙈🙉🙊🐒🦍🦧
 
 responses:
   utter_saludo:
-  - text: Hola mi nombre es Amelio, ¿En que puedo ayudarte?
+  - text: "Hola soy Amelio 🙊, el asistente virtual de DoctorPC y estoy aquí para ayudarte, por favor selecciona lo que necesites:"
     buttons:
+    - title: "Horario"
+      payload: 'horario'
     - title: "Contacto"
       payload: "contacto"
-    - title: "Ubicación"
+    - title: "Dirección"
       payload: "ubicacion"
-    - title: "Horario"
-      payload: "horario"
-    - title: "Reparaciones"
+    - title: "🔧¿Que reparamos?🔧"
       payload: "reparación"
+    - title: "Comprar equipo"
+      payload: "comprar equipo"
+    - title: "Consultas"
+      payload: "consultas"
+    - title: "Estado de reparación"
+      payload: "estado de reparación"
+    - title: "Otros"
+      payload: "otros"
   utter_despedida:
   - text: Hay sido un placer ayudarte. Espero volver a verte.
   utter_pedir_contacto:
   - text: |-
       Puedes contactar con DR PC:
-      - Llamando al teléfono:               828 121 467
-      - Contactando por WhatsApp:            675 891 723
-      - Contactando por Correo Electrónico: tomasmorales@doctorpclaspalmas.com
+      - Llamando al teléfono:               [828 121 467](tel:828121467)
+      - Contactando por WhatsApp:           [675 891 723](https://api.whatsapp.com/send?phone=34675891723&text=)
+      - Contactando por Correo Electrónico: [tomasmorales@doctorpclaspalmas.com](mailto:tomasmorales@doctorpclaspalmas.com?subject=Pedir%20info)
   utter_pedir_direccion:
   - text: "Nuestra dirección es:\nPaseo Tomas Morales, 30, 35003"
     image: "https://queopinan.net/wp-content/uploads/doctor-pc-las-palmas.jpeg"
