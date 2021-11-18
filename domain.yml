@@ -102,25 +102,25 @@ responses:
   # utter_pedir_informacion_sobre_reparaciones:
   # - text: |
   #     En Doctor Pc Las Palmas reparamos todo tipo de equipos electrónicos de todas las marcas:
-  #   buttons:
-  #   - title: "Equipo de sobremesa"
-  #     payload: "equipo de sobremesa"
-  #   - title: "Portatiles"
-  #     payload: "portatiles"
-  #   - title: "Moviles"
-  #     payload: "moviles"
-  #   - title: "Play Station 4"
-  #     payload: "play station"
-  #   - title: "Nintendo Switch"
-  #     payload: "switch"
-  #   - title: "Tablets"
-  #     payload: "tablet"
-  #   - title: "Mac"
-  #     payload: "mac"
-  #   - title: "Ipad"
-  #     payload: "ipad"
-  #   - title: "Ayuda"
-  #     payload: "ayuda"
+    # buttons:
+    # - title: "Equipo de sobremesa"
+    #   payload: "equipo de sobremesa"
+    # - title: "Portatiles"
+    #   payload: "portatiles"
+    # - title: "Moviles"
+    #   payload: "moviles"
+    # - title: "Play Station 4"
+    #   payload: "play station"
+    # - title: "Nintendo Switch"
+    #   payload: "switch"
+    # - title: "Tablets"
+    #   payload: "tablet"
+    # - title: "Mac"
+    #   payload: "mac"
+    # - title: "Ipad"
+    #   payload: "ipad"
+    # - title: "Ayuda"
+    #   payload: "ayuda"
 
   utter_decir_ordenador_sobremesa:
   - text: |-

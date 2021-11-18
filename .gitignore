@@ -1,1 +1,4 @@
 models
+config.yml
+credential.yml
+endpoints.yml
