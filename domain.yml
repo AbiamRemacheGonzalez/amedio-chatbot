@@ -11,7 +11,7 @@ intents:
 - pedir_contacto
 - pedir_direccion
 - pedir_horario
-- pedir_informacion
+- pedir_informacion_sobre_reparaciones
 - cualquier_cosa
 - decir_ordenador_sobremesa
 - decir_portatil
@@ -21,10 +21,20 @@ intents:
 - decir_ipad
 - decir_switch
 - decir_ps4
+- comprar_equipo
 #https://github.com/Horizon733/rasa-webchat
 #https://github.com/JiteshGaikwad/Chatbot-Widget
 #pip3 install spacy download es_core_news_sm
 #🐵🙈🙉🙊🐒🦍🦧
+
+slots:
+  rep_menu:
+    type: bool
+    influence_conversation: False
+  com_menu:
+    type: bool
+    influence_conversation: False
+
 
 responses:
   utter_saludo:
@@ -46,55 +56,72 @@ responses:
       payload: "estado de reparación"
     - title: "Otros"
       payload: "otros"
+
   utter_despedida:
   - text: Hay sido un placer ayudarte. Espero volver a verte.
+
   utter_pedir_contacto:
   - text: |-
       Puedes contactar con DR PC:
       - Llamando al teléfono:               [828 121 467](tel:828121467)
       - Contactando por WhatsApp:           [675 891 723](https://api.whatsapp.com/send?phone=34675891723&text=)
-      - Contactando por Correo Electrónico: [tomasmorales@doctorpclaspalmas.com](mailto:tomasmorales@doctorpclaspalmas.com?subject=Pedir%20info)
+      - Contactando por Correo Electrónico: [tomasmorales@doctorpclaspalmas.com](mailto:tomasmorales@doctorpclaspalmas.com?subject=Consulta%20DC%20PC)
+  
   utter_pedir_direccion:
-  - text: "Nuestra dirección es:\nPaseo Tomas Morales, 30, 35003"
+  - text: |-
+      Nuestra dirección es:
+      - Paseo Tomas Morales, 30, 35003 [Como llegar](https://www.google.com/maps/dir/28.1083904,-15.417344/doctor+pc+las+palmas/@28.1083847,-15.4215066,16.75z/data=!4m9!4m8!1m1!4e1!1m5!1m1!1s0xc40959ba80ce7f3:0x956568dcc1919b93!2m2!1d-15.4214631!2d28.1094548)
     image: "https://queopinan.net/wp-content/uploads/doctor-pc-las-palmas.jpeg"
+
   utter_pedir_horario:
   - text: "Nuestro horario es:\n- De Lunes a Jueves de 9:00-13:00 y de 14:00-18:00.\n- Los Viernes de 9:00-17:00"
+
   utter_pedir_ayuda:
   - text: |-
       ¿Puedo ayudarte en algo más?
     buttons:
+    - title: "Horario"
+      payload: 'horario'
     - title: "Contacto"
       payload: "contacto"
-    - title: "Ubicación"
+    - title: "Dirección"
       payload: "ubicacion"
-    - title: "Horario"
-      payload: "horario"
-    - title: "🔧Reparaciones🔧"
-      payload: "reparaciones"
+    - title: "🔧¿Que reparamos?🔧"
+      payload: "reparación"
+    - title: "Comprar equipo"
+      payload: "comprar equipo"
+    - title: "Consultas"
+      payload: "consultas"
+    - title: "Estado de reparación"
+      payload: "estado de reparación"
+    - title: "Otros"
+      payload: "otros"
     - title: "Salir"
       payload: "adios"
-  utter_pedir_informacion:
-  - text: |
-      En Doctor Pc Las Palmas reparamos todo tipo de equipos electrónicos de todas las marcas:
-    buttons:
-    - title: "Equipo de sobremesa"
-      payload: "equipo de sobremesa"
-    - title: "Portatiles"
-      payload: "portatiles"
-    - title: "Moviles"
-      payload: "moviles"
-    - title: "Play Station 4"
-      payload: "play station"
-    - title: "Nintendo Switch"
-      payload: "switch"
-    - title: "Tablets"
-      payload: "tablet"
-    - title: "Mac"
-      payload: "mac"
-    - title: "Ipad"
-      payload: "ipad"
-    - title: "Ayuda"
-      payload: "ayuda"
+  
+  # utter_pedir_informacion_sobre_reparaciones:
+  # - text: |
+  #     En Doctor Pc Las Palmas reparamos todo tipo de equipos electrónicos de todas las marcas:
+  #   buttons:
+  #   - title: "Equipo de sobremesa"
+  #     payload: "equipo de sobremesa"
+  #   - title: "Portatiles"
+  #     payload: "portatiles"
+  #   - title: "Moviles"
+  #     payload: "moviles"
+  #   - title: "Play Station 4"
+  #     payload: "play station"
+  #   - title: "Nintendo Switch"
+  #     payload: "switch"
+  #   - title: "Tablets"
+  #     payload: "tablet"
+  #   - title: "Mac"
+  #     payload: "mac"
+  #   - title: "Ipad"
+  #     payload: "ipad"
+  #   - title: "Ayuda"
+  #     payload: "ayuda"
+
   utter_decir_ordenador_sobremesa:
   - text: |-
       Realizamos todo tipo de reparaciones en sobremesa:
@@ -108,6 +135,7 @@ responses:
       - 🔧 Cualquier problema de software o hardware.
       Diagnosis gratuita en Reparación de sobremesa en Las Palmas de GC
     image: https://i0.wp.com/doctorpclaspalmas.com/wp-content/uploads/2021/04/g1-Slim-Series-600x600-1.jpg?w=600&ssl=1
+  
   utter_decir_portatil:
   - text: |-
       Realizamos todo tipo de reparaciones en portátil:
@@ -120,6 +148,7 @@ responses:
       - 🔧 Cambio de pantalla de ordenador portátil
       - 🔧 Cualquier problema de software o hardware en su portátil.
       Diagnosis gratuita en reparación de portátiles en Las Palmas.
+  
   utter_decir_movil:
   - text: |-
       En nuestros años de experiencia en DoctorPC nos hemos especializado en reparar moviles en Las Palmas de GC dando solución a todo tipo de problemas:
@@ -129,6 +158,7 @@ responses:
       - 🔧 Sustitución altavoz/micro
       - 🔧 Terminal mojado
     image: https://i0.wp.com/doctorpclaspalmas.com/wp-content/uploads/2017/10/drpc-reparaci%C3%B3nmoviles.jpg?resize=386%2C520&ssl=1
+  
   utter_decir_tablet:
   - text: |-
       Realizamos todo tipo de reparaciones en :
@@ -138,6 +168,7 @@ responses:
       - 🔧 Problemas de configuración
       - 🔧 Cambio de pantalla tablet
       - 🔧 Cualquier problema de software o hardware en su Tablet.
+  
   utter_decir_mac:
   - text: |-
       Como les decimos trabajamos con cualquier Macbook Pro, Macbook Air o iMac en los que realizamos todo tipo de reparaciones:
@@ -150,6 +181,7 @@ responses:
       - 🔧 Reparación placa base Mac
       Cualquier problema de software o hardware en su Mac.
     image: https://i2.wp.com/doctorpclaspalmas.com/wp-content/uploads/2017/10/drpc-imac-pantalla-rota.jpg?resize=313%2C232&ssl=1
+  
   utter_decir_ipad:
   - text: |-
       Realizamos todo tipo de reparaciones:
@@ -159,6 +191,7 @@ responses:
       - 🔧 iPad mojado
       - 🔧 Cualquier problema de software o hardware en su iPad
     image: https://i2.wp.com/doctorpclaspalmas.com/wp-content/uploads/2017/10/drpc-ipadpantalla2.jpg?resize=222%2C300&ssl=1
+  
   utter_decir_ps4:
   - text: |-
       Nunca tuvieron tan fácil reparar su PS4 en Las Palmas de GC, en DoctorPC reparamos todo tipo de problemas en estos dispositivos:
@@ -179,3 +212,16 @@ responses:
       - 🔧 No enciende Nintendo Switch
     image: https://i1.wp.com/doctorpclaspalmas.com/wp-content/uploads/2020/07/nintendo-switch.jpg?resize=924%2C520&ssl=1
 
+  utter_comprar_equipo:
+  - text: ¿Qué deseas comprar?.
+    buttons:
+    - title: "Sobremesa/Torre"
+      payload: 'sobremesa'
+    - title: "Portatil"
+      payload: "portatil"
+    - title: "Movil/Tablet"
+      payload: "movil"
+    - title: "Otro"
+      payload: ""
+actions:
+- action_pedir_informacion_sobre_reparaciones

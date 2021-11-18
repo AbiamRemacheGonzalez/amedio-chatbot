@@ -33,8 +33,8 @@ rules:
   - action: utter_pedir_ayuda
 - rule: Dar servicios cuando se pida información
   steps:
-  - intent: pedir_informacion
-  - action: utter_pedir_informacion
+  - intent: pedir_informacion_sobre_reparaciones
+  - action: action_pedir_informacion_sobre_reparaciones
 
 - rule: Si se dice cualquier cosa
   steps:
@@ -84,5 +84,11 @@ rules:
   - intent: decir_ps4
   - action: utter_decir_ps4
   - action: utter_pedir_ayuda
+- rule: Dar opciones
+  steps:
+  - intent: comprar_equipo
+  - slot_was_set:
+    - com_menu: true
+  - action: utter_comprar_equipo
   
   

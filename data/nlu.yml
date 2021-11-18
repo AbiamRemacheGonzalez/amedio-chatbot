@@ -11,6 +11,7 @@ nlu:
     - holi
     - ola
     - Que pasa
+
 - intent: despedida
   examples: |
     - buenas tardes
@@ -21,32 +22,7 @@ nlu:
     - me despido
     - buenas noches
     - nos vemos despues
-- intent: afirmacion
-  examples: |
-    - si
-    - s
-    - por supuesto
-    - suena bien
-    - correcto
-    - perfecto
-    - claro
-    - si, por favor.
-    - si quiero
-    - me apetece
-- intent: denegacion
-  examples: |
-    - no
-    - n
-    - nunca
-    - No creo
-    - No me gusta
-    - Ni hablar
-    - No realmente
-    - Ni quiero
-    - Para nada
-    - nunca jamás
-    - Quizas
-    - A lo mejor
+
 - intent: pedir_contacto
   examples: |
     - Contacto
@@ -80,6 +56,7 @@ nlu:
     - ¿Lugar?
     - ¿Dirección?
     - ¿Donde?
+
 - intent: pedir_horario
   examples: |
     - ¿Que horario teneis?
@@ -112,7 +89,7 @@ nlu:
     - ?
     - Me gustaría obtener ayuda
 
-- intent: pedir_informacion
+- intent: pedir_informacion_sobre_reparaciones
   examples: |
     - ¿Reparaciones?
     - Reparan?
@@ -138,6 +115,7 @@ nlu:
     - me llamo alberto
     - estoy cansado
     - usuario
+
 - intent: decir_ordenador_sobremesa
   examples: |
     - Ordenador Sobremesa
@@ -194,3 +172,18 @@ nlu:
     - switch
     - nintendo switch
     - nintendo
+
+- intent: comprar_equipo
+  examples: |
+    - comprar equipo
+    - quiero un nuevo equipo
+    - quiero comprar un equipo
+    - nuevo equipo comprar
+    - comprar ordenador
+    - comprar nuevo ordenador
+    - me gustaría ver los ordenadores que vedeis.
+    - ¿Teneis ordenadores a la venta?
+    - comprar
+    - teneís tienda
+    - que podeís vender
+    - vendeís equipos nuevos.
