@@ -6,89 +6,80 @@ rules:
   steps:
   - intent: despedida
   - action: utter_despedida
-
 - rule: Dar información cuando salude.
   steps:
   - intent: saludo
   - action: utter_saludo
-
 - rule: Decir el contacto cuando se pregunte
   steps:
   - intent: pedir_contacto
   - action: utter_pedir_contacto
-  - action: utter_pedir_ayuda
+  - action: action_ofrecer_ayuda_adicional
 - rule: Decir la dirección cuando se pregunte
   steps:
   - intent: pedir_direccion
   - action: utter_pedir_direccion
-  - action: utter_pedir_ayuda
+  - action: action_ofrecer_ayuda_adicional
 - rule: Decir horario cuando se pregunte
   steps:
   - intent: pedir_horario
   - action: utter_pedir_horario
-  - action: utter_pedir_ayuda
+  - action: action_ofrecer_ayuda_adicional
 - rule: Dar ayuda cuando se pida
   steps:
   - intent: pedir_ayuda
   - action: utter_pedir_ayuda
-- rule: Dar servicios cuando se pida información
+- rule: Dar servicios cuando se pida información sobre reparaciones
   steps:
   - intent: pedir_informacion_sobre_reparaciones
-  - action: action_pedir_informacion_sobre_reparaciones
-
+  - action: utter_pedir_informacion_sobre_reparaciones
 - rule: Si se dice cualquier cosa
   steps:
   - intent: cualquier_cosa
-  - action: utter_pedir_ayuda
-
-- rule: Dar info de sobremesa
-  steps:
-  - intent: decir_ordenador_sobremesa
-  - action: utter_decir_ordenador_sobremesa
-  - action: utter_pedir_ayuda
-
+  - action: action_ofrecer_ayuda_adicional
 - rule: Dar info de portatil
   steps:
   - intent: decir_portatil
   - action: utter_decir_portatil
-  - action: utter_pedir_ayuda
-
+  - action: action_ofrecer_ayuda_adicional
 - rule: Dar info de moviles
   steps:
   - intent: decir_movil
   - action: utter_decir_movil
-  - action: utter_pedir_ayuda
-
+  - action: action_ofrecer_ayuda_adicional
 - rule: Dar info de moviles
   steps:
   - intent: decir_tablet
   - action: utter_decir_tablet
-  - action: utter_pedir_ayuda  
+  - action: action_ofrecer_ayuda_adicional  
 - rule: Dar info de mac
   steps:
   - intent: decir_mac
   - action: utter_decir_mac
-  - action: utter_pedir_ayuda
+  - action: action_ofrecer_ayuda_adicional
 - rule: Dar info de ipad
   steps:
   - intent: decir_ipad
   - action: utter_decir_ipad
-  - action: utter_pedir_ayuda
+  - action: action_ofrecer_ayuda_adicional
 - rule: Dar info de switch
   steps:
   - intent: decir_switch
   - action: utter_decir_switch
-  - action: utter_pedir_ayuda
+  - action: action_ofrecer_ayuda_adicional
 - rule: Dar info de ps4
   steps:
   - intent: decir_ps4
   - action: utter_decir_ps4
-  - action: utter_pedir_ayuda
+  - action: action_ofrecer_ayuda_adicional
 - rule: Dar opciones
   steps:
   - intent: comprar_equipo
-  - slot_was_set:
-    - com_menu: true
   - action: utter_comprar_equipo
   
   
+# - rule: Dar info de sobremesa
+#   steps:
+#   - intent: decir_ordenador_sobremesa
+#   - action: utter_decir_ordenador_sobremesa
+#   - action: action_ofrecer_ayuda_adicional

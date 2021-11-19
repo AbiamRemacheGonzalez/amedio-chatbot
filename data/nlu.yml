@@ -172,7 +172,6 @@ nlu:
     - switch
     - nintendo switch
     - nintendo
-
 - intent: comprar_equipo
   examples: |
     - comprar equipo
@@ -187,3 +186,15 @@ nlu:
     - teneís tienda
     - que podeís vender
     - vendeís equipos nuevos.
+- intent: decir_familia_procesador
+  examples: |
+    - [intel]{"entity": "familia_procesador", "value": "intel"}
+    - [INTEL]{"entity": "familia_procesador", "value": "intel"}
+    - [Intel]{"entity": "familia_procesador", "value": "intel"}
+    - [inte]{"entity": "familia_procesador", "value": "intel"}
+    - [int]{"entity": "familia_procesador", "value": "intel"}
+    - [amd]{"entity": "familia_procesador", "value": "amd"}
+    - [AMD]{"entity": "familia_procesador", "value": "amd"}
+    - [A M D]{"entity": "familia_procesador", "value": "amd"}
+    - [A.M.D]{"entity": "familia_procesador", "value": "amd"}
+    - [aamd]{"entity": "familia_procesador", "value": "amd"}

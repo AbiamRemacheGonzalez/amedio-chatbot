@@ -22,19 +22,17 @@ intents:
 - decir_switch
 - decir_ps4
 - comprar_equipo
-#https://github.com/Horizon733/rasa-webchat
-#https://github.com/JiteshGaikwad/Chatbot-Widget
-#pip3 install spacy download es_core_news_sm
-#🐵🙈🙉🙊🐒🦍🦧
-
+- decir_familia_procesador
+entities:
+- familia_procesador
+- modelo_procesador
 slots:
-  rep_menu:
-    type: bool
-    influence_conversation: False
-  com_menu:
-    type: bool
-    influence_conversation: False
-
+  familia_procesador:
+    type: text
+    influence_conversation: false
+  modelo_procesador:
+    type: text
+    influence_conversation: false
 
 responses:
   utter_saludo:
@@ -75,52 +73,29 @@ responses:
 
   utter_pedir_horario:
   - text: "Nuestro horario es:\n- De Lunes a Jueves de 9:00-13:00 y de 14:00-18:00.\n- Los Viernes de 9:00-17:00"
-
-  utter_pedir_ayuda:
-  - text: |-
-      ¿Puedo ayudarte en algo más?
-    buttons:
-    - title: "Horario"
-      payload: 'horario'
-    - title: "Contacto"
-      payload: "contacto"
-    - title: "Dirección"
-      payload: "ubicacion"
-    - title: "🔧¿Que reparamos?🔧"
-      payload: "reparación"
-    - title: "Comprar equipo"
-      payload: "comprar equipo"
-    - title: "Consultas"
-      payload: "consultas"
-    - title: "Estado de reparación"
-      payload: "estado de reparación"
-    - title: "Otros"
-      payload: "otros"
-    - title: "Salir"
-      payload: "adios"
   
-  # utter_pedir_informacion_sobre_reparaciones:
-  # - text: |
-  #     En Doctor Pc Las Palmas reparamos todo tipo de equipos electrónicos de todas las marcas:
-    # buttons:
-    # - title: "Equipo de sobremesa"
-    #   payload: "equipo de sobremesa"
-    # - title: "Portatiles"
-    #   payload: "portatiles"
-    # - title: "Moviles"
-    #   payload: "moviles"
-    # - title: "Play Station 4"
-    #   payload: "play station"
-    # - title: "Nintendo Switch"
-    #   payload: "switch"
-    # - title: "Tablets"
-    #   payload: "tablet"
-    # - title: "Mac"
-    #   payload: "mac"
-    # - title: "Ipad"
-    #   payload: "ipad"
-    # - title: "Ayuda"
-    #   payload: "ayuda"
+  utter_pedir_informacion_sobre_reparaciones:
+  - text: |
+      En Doctor Pc Las Palmas reparamos todo tipo de equipos electrónicos de todas las marcas:
+    buttons:
+    - title: "Equipo de sobremesa"
+      payload: "equipo de sobremesa"
+    - title: "Portatiles"
+      payload: "portatiles"
+    - title: "Moviles"
+      payload: "moviles"
+    - title: "Play Station 4"
+      payload: "play station"
+    - title: "Nintendo Switch"
+      payload: "switch"
+    - title: "Tablets"
+      payload: "tablet"
+    - title: "Mac"
+      payload: "mac"
+    - title: "Ipad"
+      payload: "ipad"
+    - title: "Ayuda"
+      payload: "ayuda"
 
   utter_decir_ordenador_sobremesa:
   - text: |-
@@ -222,6 +197,44 @@ responses:
     - title: "Movil/Tablet"
       payload: "movil"
     - title: "Otro"
-      payload: ""
+      payload: "otro"
+
+  utter_pedir_ayuda:
+  - text: Hola soy Amedio, el asistente virtual de Doctor PC y puedo solucionar las siguientes cuestiones.
+    buttons:
+    - title: "Horario"
+      payload: 'horario'
+    - title: "Contacto"
+      payload: "contacto"
+    - title: "Dirección"
+      payload: "ubicacion"
+    - title: "🔧¿Que reparamos?🔧"
+      payload: "reparación"
+    - title: "Comprar equipo"
+      payload: "comprar equipo"
+    - title: "Consultas"
+      payload: "consultas"
+    - title: "Estado de reparación"
+      payload: "estado de reparación"
+    - title: "Otros"
+      payload: "otros"
+    - title: "Salir"
+      payload: "adios"
+
+  utter_familia_procesador:
+  - text: ¿Que familia de procesador estás buscando?
+    buttons:
+    - title: "Procesador Intel"
+      payload: 'quiero procesador Intel'
+    - title: "Procesador AMD"
+      payload: "quiero procesador AMD"
 actions:
-- action_pedir_informacion_sobre_reparaciones
+- action_ofrecer_ayuda_adicional
+- action_modelo_procesador
+forms:
+  formulario_de_compra_sobremesa:
+    required_slots:
+      familia_procesador:
+      - type: from_entity
+      modelo_procesador:
+      - type: from_entity
