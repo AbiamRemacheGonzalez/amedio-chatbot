@@ -4,21 +4,21 @@ stories:
   - story: el usuario quiere reparar equipo
     steps:
       - intent: pedir_informacion_sobre_reparaciones
-      - action: action_pedir_informacion_sobre_reparaciones
+      - action: utter_pedir_informacion_sobre_reparaciones
       - intent: decir_ordenador_sobremesa
       - action: utter_decir_ordenador_sobremesa
-      - intent: action_ofrecer_ayuda_adicional
+      - action: action_ofrecer_ayuda_adicional
 
-  - story: el usuario quiere comprar equipo
-    steps:
-      - intent: comprar_equipo
-      - action: utter_comprar_equipo
-      - intent: decir_ordenador_sobremesa
-      - active_loop: formulario_de_compra_sobremesa
-      - active_loop: null
-      - slot_was_set:
-        - requested_slot: null
-      - intent: action_ofrecer_ayuda_adicional
+  # - story: el usuario quiere comprar equipo
+  #   steps:
+  #     - intent: comprar_equipo
+  #     - action: utter_comprar_equipo
+  #     - intent: decir_ordenador_sobremesa
+  #     - active_loop: formulario_de_compra_sobremesa
+  #     - active_loop: null
+  #     - slot_was_set:
+  #       - requested_slot: null
+  #     - intent: action_ofrecer_ayuda_adicional
 # - story: info_path
 #   steps:
 #   - intent: pedir_ayuda

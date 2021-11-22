@@ -11,7 +11,6 @@ nlu:
     - holi
     - ola
     - Que pasa
-
 - intent: despedida
   examples: |
     - buenas tardes
@@ -22,7 +21,6 @@ nlu:
     - me despido
     - buenas noches
     - nos vemos despues
-
 - intent: pedir_contacto
   examples: |
     - Contacto
@@ -38,8 +36,7 @@ nlu:
     - Quiero el correo electrónico
     - Me gustaría contactar por correo
     - Me gustaría contactar por email
-    - Me gustaría contactar por correo electrónico
-    
+    - Me gustaría contactar por correo electrónico   
 - intent: pedir_direccion
   examples: |
     - ¿Donde puedo encontraros?
@@ -186,15 +183,15 @@ nlu:
     - teneís tienda
     - que podeís vender
     - vendeís equipos nuevos.
-- intent: decir_familia_procesador
-  examples: |
-    - [intel]{"entity": "familia_procesador", "value": "intel"}
-    - [INTEL]{"entity": "familia_procesador", "value": "intel"}
-    - [Intel]{"entity": "familia_procesador", "value": "intel"}
-    - [inte]{"entity": "familia_procesador", "value": "intel"}
-    - [int]{"entity": "familia_procesador", "value": "intel"}
-    - [amd]{"entity": "familia_procesador", "value": "amd"}
-    - [AMD]{"entity": "familia_procesador", "value": "amd"}
-    - [A M D]{"entity": "familia_procesador", "value": "amd"}
-    - [A.M.D]{"entity": "familia_procesador", "value": "amd"}
-    - [aamd]{"entity": "familia_procesador", "value": "amd"}
+# - intent: decir_familia_procesador
+#   examples: |
+#     - [intel]{"entity": "familia_procesador", "value": "intel"}
+#     - [INTEL]{"entity": "familia_procesador", "value": "intel"}
+#     - [Intel]{"entity": "familia_procesador", "value": "intel"}
+#     - [inte]{"entity": "familia_procesador", "value": "intel"}
+#     - [int]{"entity": "familia_procesador", "value": "intel"}
+#     - [amd]{"entity": "familia_procesador", "value": "amd"}
+#     - [AMD]{"entity": "familia_procesador", "value": "amd"}
+#     - [A M D]{"entity": "familia_procesador", "value": "amd"}
+#     - [A.M.D]{"entity": "familia_procesador", "value": "amd"}
+#     - [aamd]{"entity": "familia_procesador", "value": "amd"}

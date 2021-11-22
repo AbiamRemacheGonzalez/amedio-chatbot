@@ -1,31 +1,31 @@
 version: '2.0'
-session_config:
-  session_expiration_time: 60
-  carry_over_slots_to_new_session: true
+# session_config:
+#   session_expiration_time: 60
+#   carry_over_slots_to_new_session: true
 intents:
-- denegacion
-- saludo
-- afirmacion
-- despedida
-- pedir_ayuda
-- pedir_contacto
-- pedir_direccion
-- pedir_horario
-- pedir_informacion_sobre_reparaciones
-- cualquier_cosa
-- decir_ordenador_sobremesa
-- decir_portatil
-- decir_movil
-- decir_tablet
-- decir_mac
-- decir_ipad
-- decir_switch
-- decir_ps4
-- comprar_equipo
-- decir_familia_procesador
+  - denegacion
+  - saludo
+  - afirmacion
+  - despedida
+  - pedir_ayuda
+  - pedir_contacto
+  - pedir_direccion
+  - pedir_horario
+  - pedir_informacion_sobre_reparaciones
+  - cualquier_cosa
+  - decir_ordenador_sobremesa
+  - decir_portatil
+  - decir_movil
+  - decir_tablet
+  - decir_mac
+  - decir_ipad
+  - decir_switch
+  - decir_ps4
+  - comprar_equipo
+  - decir_familia_procesador
 entities:
-- familia_procesador
-- modelo_procesador
+  - familia_procesador
+  - modelo_procesador
 slots:
   familia_procesador:
     type: text
@@ -229,8 +229,8 @@ responses:
     - title: "Procesador AMD"
       payload: "quiero procesador AMD"
 actions:
-- action_ofrecer_ayuda_adicional
-- action_modelo_procesador
+  - action_ofrecer_ayuda_adicional
+  # - action_modelo_procesador
 forms:
   formulario_de_compra_sobremesa:
     required_slots:

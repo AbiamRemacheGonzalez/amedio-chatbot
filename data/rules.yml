@@ -29,10 +29,10 @@ rules:
   steps:
   - intent: pedir_ayuda
   - action: utter_pedir_ayuda
-- rule: Dar servicios cuando se pida información sobre reparaciones
-  steps:
-  - intent: pedir_informacion_sobre_reparaciones
-  - action: utter_pedir_informacion_sobre_reparaciones
+# - rule: Dar servicios cuando se pida información sobre reparaciones
+#   steps:
+#   - intent: pedir_informacion_sobre_reparaciones
+#   - action: utter_pedir_informacion_sobre_reparaciones
 - rule: Si se dice cualquier cosa
   steps:
   - intent: cualquier_cosa
