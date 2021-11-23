@@ -36,7 +36,7 @@ nlu:
     - Quiero el correo electrónico
     - Me gustaría contactar por correo
     - Me gustaría contactar por email
-    - Me gustaría contactar por correo electrónico   
+    - Me gustaría contactar por correo electrónico
 - intent: pedir_direccion
   examples: |
     - ¿Donde puedo encontraros?
@@ -52,8 +52,6 @@ nlu:
     - ¿En que lugar estaís?
     - ¿Lugar?
     - ¿Dirección?
-    - ¿Donde?
-
 - intent: pedir_horario
   examples: |
     - ¿Que horario teneis?
@@ -72,8 +70,7 @@ nlu:
     - Horarios
     - ¿Abres los domingos?
     - ¿Abres los sabados?
-  
-- intent: pedir_ayuda
+- intent: ayuda_adicional
   examples: |
     - ¿Como puedes ayudarme?
     - ayuda
@@ -85,7 +82,6 @@ nlu:
     - Quiero pedir ayuda.
     - ?
     - Me gustaría obtener ayuda
-
 - intent: pedir_informacion_sobre_reparaciones
   examples: |
     - ¿Reparaciones?
@@ -102,7 +98,6 @@ nlu:
     - Reparan ps4?
     - Que reparan?
     - Reparan ordenadore gaming?
-
 - intent: cualquier_cosa
   examples: |
     - persona
@@ -112,7 +107,6 @@ nlu:
     - me llamo alberto
     - estoy cansado
     - usuario
-
 - intent: decir_ordenador_sobremesa
   examples: |
     - Ordenador Sobremesa
@@ -123,12 +117,12 @@ nlu:
     - Sobremesa
     - Torre
     - Computadora
-
+    - sobremesa
 - intent: decir_portatil
   examples: |
-   - Portatiles
-   - portatiles
-   - ordenador portatil
+    - Portatiles
+    - portatiles
+    - ordenador portatil
 - intent: decir_movil
   examples: |
     - Moviles
@@ -183,15 +177,39 @@ nlu:
     - teneís tienda
     - que podeís vender
     - vendeís equipos nuevos.
-# - intent: decir_familia_procesador
-#   examples: |
-#     - [intel]{"entity": "familia_procesador", "value": "intel"}
-#     - [INTEL]{"entity": "familia_procesador", "value": "intel"}
-#     - [Intel]{"entity": "familia_procesador", "value": "intel"}
-#     - [inte]{"entity": "familia_procesador", "value": "intel"}
-#     - [int]{"entity": "familia_procesador", "value": "intel"}
-#     - [amd]{"entity": "familia_procesador", "value": "amd"}
-#     - [AMD]{"entity": "familia_procesador", "value": "amd"}
-#     - [A M D]{"entity": "familia_procesador", "value": "amd"}
-#     - [A.M.D]{"entity": "familia_procesador", "value": "amd"}
-#     - [aamd]{"entity": "familia_procesador", "value": "amd"}
+- intent: decir_familia_procesador
+  examples: |
+    - [intel](familia_procesador)
+    - [INTEL]{"entity": "familia_procesador", "value": "intel"}
+    - [Intel]{"entity": "familia_procesador", "value": "intel"}
+    - [inte]{"entity": "familia_procesador", "value": "intel"}
+    - [int]{"entity": "familia_procesador", "value": "intel"}
+    - [amd](familia_procesador)
+    - [AMD]{"entity": "familia_procesador", "value": "amd"}
+    - [A M D]{"entity": "familia_procesador", "value": "amd"}
+    - [A.M.D]{"entity": "familia_procesador", "value": "amd"}
+    - [aamd]{"entity": "familia_procesador", "value": "amd"}
+    - quiero procesador [Intel]{"entity": "familia_procesador", "value": "intel"}
+- intent: decir_modelo_procesador
+  examples: |
+    - [i3](modelo_procesador)
+    - [i5](modelo_procesador)
+    - [i7](modelo_procesador)
+    - [i9](modelo_procesador)
+    - [ryzen 3](modelo_procesador)
+    - [ryzen 5](modelo_procesador)
+    - [ryzen 7](modelo_procesador)
+    - [ryzen 9](modelo_procesador)
+    - [i3](modelo_procesador)
+- synonym: intel
+  examples: |
+    - INTEL
+    - Intel
+    - inte
+    - int
+- synonym: amd
+  examples: |
+    - AMD
+    - A M D
+    - A.M.D
+    - aamd

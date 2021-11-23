@@ -4,10 +4,10 @@ from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 
 
-class ActionPedirInformacionSobreReparaciones(Action):
+class ActionAyudaAdicional(Action):
 
     def name(self) -> Text:
-        return "action_ofrecer_ayuda_adicional"
+        return "action_ayuda_adicional"
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
