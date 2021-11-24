@@ -1,10 +1,10 @@
 version: "2.0"
 
-# rules:
-# - rule: decir adios siempre que un usuario diga adios
-#   steps:
-#   - intent: despedida
-#   - action: utter_despedida
+rules:
+- rule: decir adios siempre que un usuario diga adios
+  steps:
+  - intent: despedida
+  - action: utter_despedida
 # - rule: Dar información cuando salude.
 #   steps:
 #   - intent: saludo

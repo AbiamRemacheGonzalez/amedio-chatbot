@@ -1,31 +1,26 @@
 version: "2.0"
 
 stories:
-- story: el usuario dice hola
+- story: el usuario quiere comprar equipo
   steps:
-    - intent: saludo
-    - action: utter_saludo
-    - intent: pedir_horario
-    - action: utter_pedir_horario
-  # - story: el usuario quiere comprar equipo
-  #   steps:
-  #     - intent: comprar_equipo
-  #     - action: utter_comprar_equipo
-  #     - intent: decir_ordenador_sobremesa
-  #     - action: formulario_de_compra_sobremesa
-  #     - active_loop: formulario_de_compra_sobremesa
-  #     - active_loop: null
-  #     - slot_was_set:
-  #       - requested_slot: null
-  #     - action: action_ayuda_adicional
+  - intent: comprar_equipo
+  - action: utter_comprar_equipo
+  - intent: decir_ordenador_sobremesa
+  - action: formulario_de_compra_sobremesa
+  - active_loop: formulario_de_compra_sobremesa
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_ayuda_adicional
 
-  # - story: el usuario quiere reparar equipo
-  #   steps:
-  #     - intent: pedir_informacion_sobre_reparaciones
-  #     - action: utter_pedir_informacion_sobre_reparaciones
-  #     - intent: decir_ordenador_sobremesa
-  #     - action: utter_decir_ordenador_sobremesa
-  #     - action: action_ayuda_adicional
+- story: el usuario quiere reparar equipo
+  steps:
+  - intent: pedir_informacion_sobre_reparaciones
+  - action: utter_pedir_informacion_sobre_reparaciones
+  - intent: decir_ordenador_sobremesa
+  - action: utter_decir_ordenador_sobremesa
+  - action: action_ayuda_adicional
+  
 # - story: info_path
 #   steps:
 #   - intent: pedir_ayuda
@@ -77,26 +72,26 @@ stories:
 #   - action: action_pizza_form
 #   - action: utter_afirmacion
 
-- story: interactive_story_1
-  steps:
-  - intent: comprar_equipo
-  - action: utter_comprar_equipo
-  - intent: decir_ordenador_sobremesa
-  - action: formulario_de_compra_sobremesa
-  - active_loop: formulario_de_compra_sobremesa
-  - slot_was_set:
-    - requested_slot: familia_procesador
-  - slot_was_set:
-    - familia_procesador: intel
-  - slot_was_set:
-    - familia_procesador: intel
-  - slot_was_set:
-    - requested_slot: modelo_procesador
-  - slot_was_set:
-    - modelo_procesador: i3
-  - slot_was_set:
-    - modelo_procesador: i3
-  - slot_was_set:
-    - requested_slot: null
-  - active_loop: null
-  - action: action_ayuda_adicional
+# - story: interactive_story_1
+#   steps:
+#   - intent: comprar_equipo
+#   - action: utter_comprar_equipo
+#   - intent: decir_ordenador_sobremesa
+#   - action: formulario_de_compra_sobremesa
+#   - active_loop: formulario_de_compra_sobremesa
+#   - slot_was_set:
+#     - requested_slot: familia_procesador
+#   - slot_was_set:
+#     - familia_procesador: intel
+#   - slot_was_set:
+#     - familia_procesador: intel
+#   - slot_was_set:
+#     - requested_slot: modelo_procesador
+#   - slot_was_set:
+#     - modelo_procesador: i3
+#   - slot_was_set:
+#     - modelo_procesador: i3
+#   - slot_was_set:
+#     - requested_slot: null
+#   - active_loop: null
+#   - action: action_ayuda_adicional

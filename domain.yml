@@ -215,10 +215,9 @@ responses:
       payload: quiero procesador Intel
     - title: Procesador AMD
       payload: quiero procesador AMD
-  utter_ask_modelo_procesador:
-  - text: ¿Que modelo de procesador quieres?
 actions:
 - action_ayuda_adicional
+- action_ask_modelo_procesador
 - utter_comprar_equipo
 forms:
   formulario_de_compra_sobremesa:

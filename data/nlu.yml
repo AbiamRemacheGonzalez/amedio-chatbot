@@ -196,10 +196,14 @@ nlu:
     - [i5](modelo_procesador)
     - [i7](modelo_procesador)
     - [i9](modelo_procesador)
-    - [ryzen 3](modelo_procesador)
-    - [ryzen 5](modelo_procesador)
-    - [ryzen 7](modelo_procesador)
-    - [ryzen 9](modelo_procesador)
+    - [ryzen 3]{"entity": "modelo_procesador", "value": "ryzen 3"}
+    - [r3]{"entity": "modelo_procesador", "value": "ryzen 3"}
+    - [ryzen 5]{"entity": "modelo_procesador", "value": "ryzen 5"}
+    - [r5]{"entity": "modelo_procesador", "value": "ryzen 5"}
+    - [ryzen 7]{"entity": "modelo_procesador", "value": "ryzen 7"}
+    - [r7]{"entity": "modelo_procesador", "value": "ryzen 7"}
+    - [ryzen 9]{"entity": "modelo_procesador", "value": "ryzen 9"}
+    - [r9]{"entity": "modelo_procesador", "value": "ryzen 9"}
     - [i3](modelo_procesador)
 - synonym: intel
   examples: |
