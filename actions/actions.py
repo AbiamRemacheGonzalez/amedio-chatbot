@@ -1,7 +1,17 @@
 from typing import Any, Text, Dict, List
 
-from rasa_sdk import Action, Tracker
+from rasa_sdk import Action, Tracker, FormValidationAction
+from rasa_sdk.events import SlotSet
 from rasa_sdk.executor import CollectingDispatcher
+from rasa_sdk.events import AllSlotsReset
+from rasa_sdk.types import DomainDict
+from rasa_sdk.forms import FormAction
+
+import psycopg2
+import datetime as dt
+import sqlite3
+
+#https://www.youtube.com/watch?v=dGH91BxXVis
 
 class ActionResetCompraSlots(Action):
 
@@ -11,7 +21,7 @@ class ActionResetCompraSlots(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        return [SlotSet("familia_procesador", None),SlotSet("modelo_procesador", None)]
+        return [SlotSet("familia_procesador", None),SlotSet("modelo_procesador", None),SlotSet("cantidad_ram", None),SlotSet("grafica_dedicada", None)]
 
 class ActionAyudaAdicional(Action):
 

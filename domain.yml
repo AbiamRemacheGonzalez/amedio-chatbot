@@ -27,12 +27,20 @@ intents:
 entities:
 - familia_procesador
 - modelo_procesador
+- cantidad_ram
+- grafica_dedicada
 slots:
   familia_procesador:
     type: any
     influence_conversation: false
   modelo_procesador:
     type: any
+    influence_conversation: false
+  cantidad_ram:
+    type: any
+    influence_conversation: false
+  grafica_dedicada:
+    type: bool
     influence_conversation: false
 responses:
   utter_saludo:
@@ -215,10 +223,34 @@ responses:
       payload: quiero procesador Intel
     - title: Procesador AMD
       payload: quiero procesador AMD
+  utter_ask_cantidad_ram:
+  - text: ¿Que cantidad de memoria RAM deseas?
+    buttons:
+    - title: 4 GB
+      payload: 4GB
+    - title: 8 GB
+      payload: 8GB
+    - title: 16 GB
+      payload: 16GB
+    - title: 32 GB
+      payload: 32G
+    - title: 64 GB
+      payload: 64GB
+    - title: 128 GB
+      payload: 128GB
+  utter_ask_grafica_dedicada:
+  - text: ¿Quieres gráfica dedicada?
+    buttons:
+    - title: "Si"
+      payload: '/afirmacion{"grafica_dedicada": true}'
+    - title: "No"
+      payload: '/denegacion{"grafica_dedicada": false}'
+
 actions:
 - action_ayuda_adicional
 - action_ask_modelo_procesador
 - utter_comprar_equipo
+- action_reset_comprar_slots
 forms:
   formulario_de_compra_sobremesa:
     required_slots:
@@ -228,3 +260,9 @@ forms:
       modelo_procesador:
       - type: from_entity
         entity: modelo_procesador
+      cantidad_ram:
+      - type: from_entity
+        entity: cantidad_ram
+      grafica_dedicada:
+      - type: from_entity
+        entity: grafica_dedicada

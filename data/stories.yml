@@ -6,6 +6,7 @@ stories:
   - intent: comprar_equipo
   - action: utter_comprar_equipo
   - intent: decir_ordenador_sobremesa
+  - action: action_reset_comprar_slots
   - action: formulario_de_compra_sobremesa
   - active_loop: formulario_de_compra_sobremesa
   - active_loop: null

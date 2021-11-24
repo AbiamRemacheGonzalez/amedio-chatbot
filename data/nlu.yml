@@ -205,6 +205,32 @@ nlu:
     - [ryzen 9]{"entity": "modelo_procesador", "value": "ryzen 9"}
     - [r9]{"entity": "modelo_procesador", "value": "ryzen 9"}
     - [i3](modelo_procesador)
+- intent: decir_cantidad_ram
+  examples: |
+    - [8]{"entity": "cantidad_ram", "value": "8GB"}
+    - [8G]{"entity": "cantidad_ram", "value": "8GB"}
+    - [8GB]{"entity": "cantidad_ram", "value": "8GB"}
+    - [8 GB]{"entity": "cantidad_ram", "value": "8GB"}
+    - [4]{"entity": "cantidad_ram", "value": "4GB"}
+    - [4G]{"entity": "cantidad_ram", "value": "4GB"}
+    - [4GB]{"entity": "cantidad_ram", "value": "4GB"}
+    - [4 GB]{"entity": "cantidad_ram", "value": "4GB"}
+    - [16]{"entity": "cantidad_ram", "value": "16GB"}
+    - [16G]{"entity": "cantidad_ram", "value": "16GB"}
+    - [16GB]{"entity": "cantidad_ram", "value": "16GB"}
+    - [16 GB]{"entity": "cantidad_ram", "value": "16GB"}
+    - [32]{"entity": "cantidad_ram", "value": "32GB"}
+    - [32G]{"entity": "cantidad_ram", "value": "32GB"}
+    - [32GB]{"entity": "cantidad_ram", "value": "32GB"}
+    - [32 GB]{"entity": "cantidad_ram", "value": "32GB"}
+    - [64]{"entity": "cantidad_ram", "value": "64GB"}
+    - [64G]{"entity": "cantidad_ram", "value": "64GB"}
+    - [64GB]{"entity": "cantidad_ram", "value": "64GB"}
+    - [64 GB]{"entity": "cantidad_ram", "value": "64GB"}
+    - [128]{"entity": "cantidad_ram", "value": "128GB"}
+    - [128G]{"entity": "cantidad_ram", "value": "128GB"}
+    - [128GB]{"entity": "cantidad_ram", "value": "128GB"}
+    - [128 GB]{"entity": "cantidad_ram", "value": "128GB"}
 - synonym: intel
   examples: |
     - INTEL
