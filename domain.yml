@@ -24,11 +24,14 @@ intents:
 - decir_ipad
 - decir_switch
 - decir_ps4
+- decir_telefono
+- decir_mail
 entities:
 - familia_procesador
 - modelo_procesador
 - cantidad_ram
-- grafica_dedicada
+- mail
+- telefono
 slots:
   familia_procesador:
     type: any
@@ -40,6 +43,18 @@ slots:
     type: any
     influence_conversation: false
   grafica_dedicada:
+    type: bool
+    influence_conversation: false
+  nombre:
+    type: any
+    influence_conversation: false
+  telefono:
+    type: any
+    influence_conversation: false
+  mail:
+    type: any
+    influence_conversation: false
+  proteccion_datos:
     type: bool
     influence_conversation: false
 responses:
@@ -245,7 +260,19 @@ responses:
       payload: '/afirmacion{"grafica_dedicada": true}'
     - title: "No"
       payload: '/denegacion{"grafica_dedicada": false}'
-
+  utter_ask_nombre:
+  - text: Por último necesitamos algunos datos para ponernos en contacto contigo. ¿Cual es tu nombre?
+  utter_ask_telefono:
+  - text: 📞 ¿Cual es tu número de teléfono? 📞
+  utter_ask_mail:
+  - text: ✉️ ¿Cual es tu correo electrónico? ✉️(Opcional)
+  utter_ask_proteccion_datos:
+  - text: Para poder finalizar, necesito que aceptes la [Polçitica de Protección de Datos](https://doctorpclaspalmas.com/politica-de-privacidad/)
+    buttons:
+    - title: "Aceptar"
+      payload: '/afirmacion{"proteccion_datos": true}'
+    - title: "Rechazar"
+      payload: '/denegacion{"proteccion_datos": false}'
 actions:
 - action_ayuda_adicional
 - action_ask_modelo_procesador
@@ -266,3 +293,16 @@ forms:
       grafica_dedicada:
       - type: from_entity
         entity: grafica_dedicada
+  formulario_de_datos_personales:
+    required_slots:
+      nombre:
+      - type: from_text
+      telefono:
+      - type: from_entity
+        entity: telefono
+      mail:
+      - type: from_entity
+        entity: mail
+      proteccion_datos:
+      - type: from_entity
+        entity: proteccion_datos

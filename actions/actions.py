@@ -10,6 +10,7 @@ from rasa_sdk.forms import FormAction
 import psycopg2
 import datetime as dt
 import sqlite3
+import smtplib
 
 #https://www.youtube.com/watch?v=dGH91BxXVis
 
