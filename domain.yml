@@ -58,25 +58,6 @@ slots:
     type: bool
     influence_conversation: false
 responses:
-  utter_saludo:
-  - text: 'Hola soy Amelio 🙊, el asistente virtual de DoctorPC y estoy aquí para ayudarte, por favor selecciona lo que necesites:'
-    buttons:
-    - title: Horario
-      payload: horario
-    - title: Contacto
-      payload: contacto
-    - title: Dirección
-      payload: ubicacion
-    - title: 🔧¿Que reparamos?🔧
-      payload: reparación
-    - title: Comprar equipo
-      payload: comprar equipo
-    - title: Consultas
-      payload: consultas
-    - title: Estado de reparación
-      payload: estado de reparación
-    - title: Otros
-      payload: otros
   utter_despedida:
   - text: Hay sido un placer ayudarte. Espero volver a verte.
   utter_pedir_contacto:
@@ -278,6 +259,7 @@ actions:
 - action_ask_modelo_procesador
 - utter_comprar_equipo
 - action_reset_comprar_slots
+- action_saludo
 forms:
   formulario_de_compra_sobremesa:
     required_slots:

@@ -7,9 +7,8 @@ from rasa_sdk.events import AllSlotsReset
 from rasa_sdk.types import DomainDict
 from rasa_sdk.forms import FormAction
 
-import psycopg2
-import datetime as dt
-import sqlite3
+import datetime
+import calendar
 import smtplib
 
 #https://www.youtube.com/watch?v=dGH91BxXVis
@@ -66,3 +65,37 @@ class ActionAskModeloProcesador(Action):
             {"title":"Intel i9","payload":"i9"}]
         dispatcher.utter_message(text="¿Que modelo de procesador quieres?", buttons=button_resp)
         return []
+
+class ActionSaludo(Action):
+    def name(self) -> Text:
+        return "action_saludo"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        button_resp=[{"title":"Horario","payload":'horario'},
+            {"title":"Contacto","payload":"contacto"},
+            {"title":"Dirección","payload":"ubicacion"},
+            {"title":"🔧¿Que reparamos?🔧","payload":"reparación"},
+            {"title":"Comprar equipo","payload":"comprar equipo"},
+            {"title":"Consultas","payload":"consultas"},
+            {"title":"Estado de reparación","payload":"estado de reparación"},
+            {"title":"Otros","payload":"otros"},
+            {"title":"Salir","payload":"adios"}]
+        date = datetime.datetime.now()
+        datestr = self.toWeekDay(int(date.strftime("%w")))+", "+str(date.day)+" de "+ self.toMonthYear(int(date.strftime("%m")))+" de " +str(date.year)
+        saludo = self.greetHourSelection(int(date.strftime("%w")))
+        dispatcher.utter_message(text="{saludo} soy Amelio 🙊, hoy es {datestr}. Soy el asistente virtual de DoctorPC y estoy aquí para ayudarte, por favor selecciona lo que necesites:", buttons=button_resp)
+        return []
+    def toWeekDay(self, weeknumber):
+        days =["Lunes","Martes","Miércoles","Jueves","Viernes","Sábado","Domingo"]
+        return days[weeknumber-1]
+    def toMonthYear(self, yearnumber):
+        months = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"]
+        return months[yearnumber]
+    def greetHourSelection(self, hournumber):
+        if hournumber < 12 and hournumber >= 6:
+            return "Buenos días"
+        if hournumber > 21 and hournumber < 6:
+            return "Buenas noches"
+        return "Buenas tardes"

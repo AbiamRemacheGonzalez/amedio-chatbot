@@ -255,13 +255,31 @@ nlu:
     - [+34709349022](telefono)
 - intent: decir_mail
   examples: |
-    - [689684235](telefono)
+    - [abiamrg.14@gmail.com](mail)
+    - [exulonk@gmail.com](mail)
+    - [tomasmorales@doctorpclaspalmas.com](mail)
+    - [test@doctorpclaspalmas.com](mail)
+    - [test@doctorpclaspalmas.com](mail)
+- intent: parar
+  examples: |
+    - para
+    - stop
+    - puedes parar
+    - quiero parar
+    - quiero cancelar
+    - cancelar
+    - otra cosa
+    - quiero otra cosa
+    - quiero cualquier otra cosa
+    - me gustaría cancelar
+    - cancelar formulario
+    - parar formulario
 - regex: telefono
   examples: |
-  - (\+34|0034|34)?[7|6]\d{8}
+    - (\+34|0034|34)?[7|6]\d{8}
 - regex: mail
-  examples: |
-  - (?:[a-z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+\/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])
+  examples: | 
+    - (?:[a-z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+\/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])
 - synonym: intel
   examples: |
     - INTEL
