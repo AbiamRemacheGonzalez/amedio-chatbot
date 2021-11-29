@@ -145,14 +145,14 @@ class ActionMostrarResultadosSobremesa(Action):
             Procesador=\t"+familia_procesador+" "+modelo_procesador+"\n\
             RAM=\t"+cantidad_ram+"\n\
             Gráfica dedicada=\t"+grafica_dedicada
-
             # Mostrar mensaje
             message = nombre + " tu petición se ha enviado. Lo atenderemos con la mayor brevedad."
+            dispatcher.utter_message(text=message)
         else:
             button_resp=[{"title":"Aceptar","payload":'horario'},
             {"title":"Rechazar","payload":"contacto"},
             {"title":"Cancelar","payload":"cancelar"}]
             amelio = AmelioSaludaCorrectamente()
             message = amelio.obtenerSaludo +", "+nombre + " para poder tratar la información debes aceptar la política de protección de datos."
-        dispatcher.utter_message(text=message)
+            dispatcher.utter_message(text=message,buttons=button_resp)
         return [SlotSet("familia_procesador", None),SlotSet("modelo_procesador", None),SlotSet("cantidad_ram", None),SlotSet("grafica_dedicada", None)]
