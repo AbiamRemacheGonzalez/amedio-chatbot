@@ -26,6 +26,7 @@ intents:
 - decir_ps4
 - decir_telefono
 - decir_mail
+- parar
 entities:
 - familia_procesador
 - modelo_procesador
@@ -219,6 +220,8 @@ responses:
       payload: quiero procesador Intel
     - title: Procesador AMD
       payload: quiero procesador AMD
+    - title: cancelar
+      payload: cancelar 
   utter_ask_cantidad_ram:
   - text: ¿Que cantidad de memoria RAM deseas?
     buttons:
@@ -234,6 +237,8 @@ responses:
       payload: 64GB
     - title: 128 GB
       payload: 128GB
+    - title: cancelar
+      payload: cancelar
   utter_ask_grafica_dedicada:
   - text: ¿Quieres gráfica dedicada?
     buttons:
@@ -246,9 +251,9 @@ responses:
   utter_ask_telefono:
   - text: 📞 ¿Cual es tu número de teléfono? 📞
   utter_ask_mail:
-  - text: ✉️ ¿Cual es tu correo electrónico? ✉️(Opcional)
+  - text: ✉️ ¿Cual es tu correo electrónico? ✉️
   utter_ask_proteccion_datos:
-  - text: Para poder finalizar, necesito que aceptes la [Polçitica de Protección de Datos](https://doctorpclaspalmas.com/politica-de-privacidad/)
+  - text: Para poder finalizar, necesito que aceptes la [Politica de Protección de Datos](https://doctorpclaspalmas.com/politica-de-privacidad/)
     buttons:
     - title: "Aceptar"
       payload: '/afirmacion{"proteccion_datos": true}'
@@ -259,7 +264,9 @@ actions:
 - action_ask_modelo_procesador
 - utter_comprar_equipo
 - action_reset_comprar_slots
+- action_reset_personal_slots
 - action_saludo
+- action_tratar_resultados_sobremesa
 forms:
   formulario_de_compra_sobremesa:
     required_slots:

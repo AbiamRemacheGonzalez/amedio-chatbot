@@ -9,12 +9,53 @@ stories:
   - action: action_reset_comprar_slots
   - action: formulario_de_compra_sobremesa
   - active_loop: formulario_de_compra_sobremesa
+  - checkpoint: posible_cancelacion
+
+- story: el usuario continua sin cancelar
+  steps:
+  - checkpoint: posible_cancelacion
   - active_loop: null
   - slot_was_set:
     - requested_slot: null
+  - checkpoint: continua_formulario_datos_personales
+
+- story: el usuario continua con el formulario de datos personales
+  steps:
+  - checkpoint: continua_formulario_datos_personales
+  - action: action_reset_personal_slots
+  - action: formulario_de_datos_personales
+  - active_loop: formulario_de_datos_personales
+  - checkpoint: posible_cancelacion_datos_personales
+
+- story: el usuario termina satisfactoriamente el formulario de compra y datos personales.
+  steps:
+  - checkpoint: posible_cancelacion_datos_personales
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_tratar_resultados_sobremesa
   - action: action_ayuda_adicional
 
-- story: el usuario quiere reparar equipo
+- story: el usuario quiere cancelar el formulario de datos personales
+  steps:
+  - checkpoint: posible_cancelacion_datos_personales
+  - intent: parar
+  - action: action_deactivate_loop
+  - active_loop: null
+  - action: action_reset_comprar_slots
+  - action: action_reset_personal_slots
+  - action: action_ayuda_adicional
+
+- story: el usuario quiere cancelar el formulario de compra de sobremesa
+  steps:
+  - checkpoint: posible_cancelacion
+  - intent: parar
+  - action: action_deactivate_loop
+  - active_loop: null
+  - action: action_reset_comprar_slots
+  - action: action_ayuda_adicional
+
+- story: el usuario quiere reparar sobremesa
   steps:
   - intent: pedir_informacion_sobre_reparaciones
   - action: utter_pedir_informacion_sobre_reparaciones

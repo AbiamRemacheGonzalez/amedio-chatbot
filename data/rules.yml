@@ -9,29 +9,29 @@ rules:
   steps:
   - intent: saludo
   - action: action_saludo
-# - rule: Decir el contacto cuando se pregunte
-#   steps:
-#   - intent: pedir_contacto
-#   - action: utter_pedir_contacto
-#   - action: action_ayuda_adicional
-# - rule: Decir la dirección cuando se pregunte
-#   steps:
-#   - intent: pedir_direccion
-#   - action: utter_pedir_direccion
-#   - action: action_ayuda_adicional
-# - rule: Decir horario cuando se pregunte
-#   steps:
-#   - intent: pedir_horario
-#   - action: utter_pedir_horario
-#   - action: action_ayuda_adicional
-# - rule: Dar ayuda cuando se pida
-#   steps:
-#   - intent: ayuda_adicional
-#   - action: utter_ayuda_adicional
-# - rule: Si se dice cualquier cosa
-#   steps:
-#   - intent: cualquier_cosa
-#   - action: action_ayuda_adicional
+- rule: Decir el contacto cuando se pregunte
+  steps:
+  - intent: pedir_contacto
+  - action: utter_pedir_contacto
+  - action: action_ayuda_adicional
+- rule: Decir la dirección cuando se pregunte
+  steps:
+  - intent: pedir_direccion
+  - action: utter_pedir_direccion
+  - action: action_ayuda_adicional
+- rule: Decir horario cuando se pregunte
+  steps:
+  - intent: pedir_horario
+  - action: utter_pedir_horario
+  - action: action_ayuda_adicional
+- rule: Dar ayuda cuando se pida
+  steps:
+  - intent: ayuda_adicional
+  - action: utter_ayuda_adicional
+- rule: Si se dice cualquier cosa
+  steps:
+  - intent: cualquier_cosa
+  - action: action_ayuda_adicional
 # - rule: Dar info de portatil
 #   steps:
 #   - intent: decir_portatil
