@@ -273,6 +273,7 @@ forms:
       familia_procesador:
       - type: from_entity
         entity: familia_procesador
+        not_intent: 
       modelo_procesador:
       - type: from_entity
         entity: modelo_procesador

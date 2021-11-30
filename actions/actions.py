@@ -6,7 +6,7 @@ from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import AllSlotsReset
 from rasa_sdk.types import DomainDict
 from rasa_sdk.forms import FormAction
-from mail_manager import MailManager
+from .mail_manager import MailManager
 
 import datetime
 import calendar
@@ -95,13 +95,13 @@ class ActionSaludo(Action):
             {"title":"Otros","payload":"otros"},
             {"title":"Salir","payload":"adios"}]
         amelio = AmelioSaludaCorrectamente()
-        message = amelio.obtenerSaludo +"\n\nSoy Amelio 🙊, hoy es "+amelio.obtenerFechaFormateada+".\nSoy el asistente virtual de DoctorPC y estoy aquí para ayudarte, por favor selecciona lo que necesites:"
+        message = amelio.obtenerSaludo() +"\n\nSoy Amelio 🙊, hoy es "+amelio.obtenerFechaFormateada() +".\nSoy el asistente virtual de DoctorPC y estoy aquí para ayudarte, por favor selecciona lo que necesites:"
         dispatcher.utter_message(text=message, buttons=button_resp)
         return []
 
 class AmelioSaludaCorrectamente:
     def __init__(self):
-        date = datetime.datetime.now()
+        self.date = datetime.datetime.now()
     def obtenerSaludo(self):
         return self.greetHourSelection(int(self.date.strftime("%w")))
     def obtenerFechaFormateada(self):
@@ -141,18 +141,20 @@ class ActionMostrarResultadosSobremesa(Action):
         if proteccion_datos:
             # Enviar correo electrónico
             mail_manager = MailManager()
-            message = "El cliente "+nombre+" con telefono "+telefono+" y con correo electrónico "+mail+" quiere un presupuesto de un Equipo sobremesa:\n\
-            Procesador=\t"+familia_procesador+" "+modelo_procesador+"\n\
-            RAM=\t"+cantidad_ram+"\n\
-            Gráfica dedicada=\t"+grafica_dedicada
+            message = "El cliente "+str(nombre)+" con telefono "+str(telefono)+" y con correo electrónico "+str(mail)+" quiere un presupuesto de un Equipo sobremesa:\n\
+            Procesador=\t"+str(familia_procesador)+" "+str(modelo_procesador)+"\n\
+            RAM=\t"+str(cantidad_ram)+"\n\
+            Gráfica dedicada=\t"+str(grafica_dedicada)
+            mail_manager.sendMailTo(message,"test@doctorpclaspalmas.com","Equipo a medida",mail)
             # Mostrar mensaje
             message = nombre + " tu petición se ha enviado. Lo atenderemos con la mayor brevedad."
             dispatcher.utter_message(text=message)
         else:
-            button_resp=[{"title":"Aceptar","payload":'horario'},
-            {"title":"Rechazar","payload":"contacto"},
+            button_resp=[{"title":"Aceptar","payload":'/afirmacion{"proteccion_datos": true}'},
+            {"title":"Rechazar","payload":'/denegacion{"proteccion_datos": false}'},
             {"title":"Cancelar","payload":"cancelar"}]
             amelio = AmelioSaludaCorrectamente()
             message = amelio.obtenerSaludo +", "+nombre + " para poder tratar la información debes aceptar la política de protección de datos."
             dispatcher.utter_message(text=message,buttons=button_resp)
+            return [SlotSet("proteccion_datos",None)]
         return [SlotSet("familia_procesador", None),SlotSet("modelo_procesador", None),SlotSet("cantidad_ram", None),SlotSet("grafica_dedicada", None)]
