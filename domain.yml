@@ -273,7 +273,7 @@ forms:
       familia_procesador:
       - type: from_entity
         entity: familia_procesador
-        not_intent: 
+        not_intent: saludo,despedida
       modelo_procesador:
       - type: from_entity
         entity: modelo_procesador

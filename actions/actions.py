@@ -113,7 +113,7 @@ class AmelioSaludaCorrectamente:
         return days[weeknumber-1]
     def toMonthYear(self, yearnumber):
         months = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"]
-        return months[yearnumber]
+        return months[yearnumber-1]
     def greetHourSelection(self, hournumber):
         if hournumber < 12 and hournumber >= 6:
             return "Buenos días"
